@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/firebase';
 
-const Login = ({navigation}: {navigation: any}) => {
+const Login = ({navigation}) => {
   const [ShowPassword, setShowPassword] = React.useState(true);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -14,10 +14,10 @@ const Login = ({navigation}: {navigation: any}) => {
     .then((userCredential) => {
       console.log(userCredential);
       //Alert.alert('Complete');
-      navigation.navigate('Home');
+      navigation.navigate('Operation_Screen');
     })
     .catch((err) => {
-      Alert.alert('Invalid Grant: User credentials are invalid');
+      Alert.alert('Password invalid');
       console.log(err);
     })
   }

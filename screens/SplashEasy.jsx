@@ -1,12 +1,12 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React from 'react'
 
-const SplashFast = ({navigation}: {navigation: any}) => {
+const SplashEasy = ({navigation}) => {
   return (
     <View style={style.container}>
       <View style={style.img}>
         <Image
-          source={require('../img/Fast.jpg')}
+          source={require('../img/Easy.jpg')}
           style={{width: 265, height: 149}}
         />
       </View>
@@ -18,7 +18,7 @@ const SplashFast = ({navigation}: {navigation: any}) => {
             fontWeight: 'bold',
             textAlign: 'center',
           }}>
-          Fast
+          Easy
         </Text>
         <Text
           style={{
@@ -28,13 +28,12 @@ const SplashFast = ({navigation}: {navigation: any}) => {
             marginHorizontal: 30,
             marginVertical: 30,
           }}>
-          You can check the available parking spaces of the parking first, 
-          so as not to waste time If the parking is full
+          Just scan the QR code to sign in to our parking service
         </Text>
       </View>
       <View
           style={{
-            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingTop: 100, paddingRight: 20, paddingLeft: 20
+            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingTop: 120, paddingRight: 20, paddingLeft: 20
           }}>
           <TouchableOpacity onPress={() => navigation.navigate('Regis')}
               style={{
@@ -47,7 +46,7 @@ const SplashFast = ({navigation}: {navigation: any}) => {
             <Text style={{fontWeight: 'bold', fontSize: 16, textAlign: 'center', color: '#000000'}}>Skip</Text>
           </TouchableOpacity>
           <TouchableOpacity
-           onPress={() => navigation.navigate('Regis')}
+           onPress={() => navigation.navigate('SplashFast')}
             style={{
               backgroundColor: '#097AFF',
               paddingVertical: 10,
@@ -61,7 +60,7 @@ const SplashFast = ({navigation}: {navigation: any}) => {
                 color: 'white',
                 fontWeight: 'bold',
               }}>
-              Start
+              Next
             </Text>
           </TouchableOpacity>
         </View>
@@ -81,4 +80,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default SplashFast
+export default SplashEasy

@@ -1,13 +1,12 @@
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import React from 'react'
 
-const Splash = ({navigation}: {navigation: any}) => {
-
+const SplashFast = ({navigation}) => {
   return (
     <View style={style.container}>
       <View style={style.img}>
         <Image
-          source={require('../img/Welcome.jpg')}
+          source={require('../img/Fast.jpg')}
           style={{width: 265, height: 149}}
         />
       </View>
@@ -19,7 +18,7 @@ const Splash = ({navigation}: {navigation: any}) => {
             fontWeight: 'bold',
             textAlign: 'center',
           }}>
-          Welcome to Park
+          Fast
         </Text>
         <Text
           style={{
@@ -29,12 +28,13 @@ const Splash = ({navigation}: {navigation: any}) => {
             marginHorizontal: 30,
             marginVertical: 30,
           }}>
-          The best possible parking space nearby your desired destination
+          You can check the available parking spaces of the parking first, 
+          so as not to waste time If the parking is full
         </Text>
       </View>
-        <View
+      <View
           style={{
-            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingTop: 120, paddingRight: 20, paddingLeft: 20
+            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingTop: 100, paddingRight: 20, paddingLeft: 20
           }}>
           <TouchableOpacity onPress={() => navigation.navigate('Regis')}
               style={{
@@ -47,7 +47,7 @@ const Splash = ({navigation}: {navigation: any}) => {
             <Text style={{fontWeight: 'bold', fontSize: 16, textAlign: 'center', color: '#000000'}}>Skip</Text>
           </TouchableOpacity>
           <TouchableOpacity
-           onPress={() => navigation.navigate('SplashEasy')}
+           onPress={() => navigation.navigate('Regis')}
             style={{
               backgroundColor: '#097AFF',
               paddingVertical: 10,
@@ -61,13 +61,13 @@ const Splash = ({navigation}: {navigation: any}) => {
                 color: 'white',
                 fontWeight: 'bold',
               }}>
-              Next
+              Start
             </Text>
           </TouchableOpacity>
         </View>
     </View>
-  );
-};
+  )
+}
 
 const style = StyleSheet.create({
   container: {
@@ -81,4 +81,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default Splash;
+export default SplashFast

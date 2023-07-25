@@ -1,12 +1,13 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import React from 'react';
 
-const SplashEasy = ({navigation}: {navigation: any}) => {
+const Splash = ({navigation}) => {
+
   return (
     <View style={style.container}>
       <View style={style.img}>
         <Image
-          source={require('../img/Easy.jpg')}
+          source={require('../img/Welcome.jpg')}
           style={{width: 265, height: 149}}
         />
       </View>
@@ -18,7 +19,7 @@ const SplashEasy = ({navigation}: {navigation: any}) => {
             fontWeight: 'bold',
             textAlign: 'center',
           }}>
-          Easy
+          Welcome to Park
         </Text>
         <Text
           style={{
@@ -28,10 +29,10 @@ const SplashEasy = ({navigation}: {navigation: any}) => {
             marginHorizontal: 30,
             marginVertical: 30,
           }}>
-          Just scan the QR code to sign in to our parking service
+          The best possible parking space nearby your desired destination
         </Text>
       </View>
-      <View
+        <View
           style={{
             display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingTop: 120, paddingRight: 20, paddingLeft: 20
           }}>
@@ -46,7 +47,7 @@ const SplashEasy = ({navigation}: {navigation: any}) => {
             <Text style={{fontWeight: 'bold', fontSize: 16, textAlign: 'center', color: '#000000'}}>Skip</Text>
           </TouchableOpacity>
           <TouchableOpacity
-           onPress={() => navigation.navigate('SplashFast')}
+           onPress={() => navigation.navigate('SplashEasy')}
             style={{
               backgroundColor: '#097AFF',
               paddingVertical: 10,
@@ -65,8 +66,8 @@ const SplashEasy = ({navigation}: {navigation: any}) => {
           </TouchableOpacity>
         </View>
     </View>
-  )
-}
+  );
+};
 
 const style = StyleSheet.create({
   container: {
@@ -80,4 +81,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default SplashEasy
+export default Splash;

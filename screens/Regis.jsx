@@ -7,7 +7,7 @@ import { auth } from '../Firebase/firebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
-const Regis = ({navigation}: {navigation: any}) => {
+const Regis = ({navigation}) => {
   const [ShowPassword, setShowPassword] = React.useState(true);
 
   const [name, setName] = React.useState('');
@@ -16,20 +16,6 @@ const Regis = ({navigation}: {navigation: any}) => {
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-   function writeUserData() {
-     set(ref(db, 'users/' + userName), {
-       name: name,
-       surename: surename, 
-       email: email,
-       username: userName,
-       password: password
-     }).then(() => {
-       //Alert.alert('Data Submit');
-       navigation.navigate('Home')
-     }).catch((error) => {
-       Alert.alert(error)
-     })
-   }
   const RegisterUser = () => {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
