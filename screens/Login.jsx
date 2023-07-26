@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/firebase';
 
 const Login = ({navigation}) => {
-  const [ShowPassword, setShowPassword] = React.useState(true);
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [ShowPassword, setShowPassword] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const SingInUser = () => {
     signInWithEmailAndPassword(auth, email, password)

@@ -19,11 +19,13 @@ import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import ProfileScreen from './ProfileScreen';
 import SettingsScreen from './SettingsScreen';
+import QRScreen from './QRScreen';
 
 const homeName = "Home";
 const detailsName = "Details";
 const profileName = "Profile";
 const settingsName = "Settings";
+const qrName = "Scan"
 
 function Operation_Screen() {
   return (
@@ -32,7 +34,7 @@ function Operation_Screen() {
         screenOptions={({ route }) => ({
           tabBarInactiveTintColor: 'black',
           tabBarLabelStyle: { paddingBottom: 10, fontSize: 10 },
-          tabBarStyle: { padding: 10, height: 70},
+          tabBarStyle: { padding: 10, height: 70, borderTopLeftRadius: 30, borderTopRightRadius: 30},
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
@@ -43,6 +45,8 @@ function Operation_Screen() {
             } else if (rn === detailsName) {
               iconName = focused ? 'list' : 'list-outline';
 
+            } else if (rn === qrName) {
+              iconName = focused ? 'scan-outline' : 'scan-sharp';
             } else if (rn === profileName) {
               iconName = focused ? 'people' : 'people-outline'
             } 
@@ -56,9 +60,9 @@ function Operation_Screen() {
         })}>
         <Tab.Screen name={homeName} component={HomeScreen} options={{headerShown: false}} />
         <Tab.Screen name={detailsName} component={DetailsScreen} options={{headerShown: false}} />
+        <Tab.Screen name={qrName} component={QRScreen} options={{headerShown: false}} />
         <Tab.Screen name={profileName} component={ProfileScreen} options={{headerShown: false}} />
         <Tab.Screen name={settingsName} component={SettingsScreen} options={{headerShown: false}} />
-
       </Tab.Navigator>
   );
 }
@@ -67,11 +71,11 @@ function MainContainer(props) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-       <Stack.Screen name= "Splash" component={Splash} options={{headerShown: false}}/>
+        {/* <Stack.Screen name= "Splash" component={Splash} options={{headerShown: false}}/>
         <Stack.Screen name= "SplashEasy" component={SplashEasy} options={{headerShown: false}}/>
         <Stack.Screen name= "SplashFast" component={SplashFast} options={{headerShown: false}}/>
         <Stack.Screen name= "Regis" component={Regis} options={{headerShown: false}}/>
-        <Stack.Screen name= "Login" component={Login} options={{headerShown: false}}/>
+        <Stack.Screen name= "Login" component={Login} options={{headerShown: false}}/> */}
         <Stack.Screen name= "Operation_Screen" component={Operation_Screen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>

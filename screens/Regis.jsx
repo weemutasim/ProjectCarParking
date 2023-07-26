@@ -1,27 +1,27 @@
 import {View, Text, TouchableOpacity, TextInput, StyleSheet, Alert} from 'react-native';
-import React, { useId } from 'react';
+import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign'
-import { getDatabase, ref, onValue, set} from "firebase/database";
+//import { getDatabase, ref, onValue, set} from "firebase/database";
 import { db } from '../Firebase/firebase';
 import { auth } from '../Firebase/firebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const Regis = ({navigation}) => {
-  const [ShowPassword, setShowPassword] = React.useState(true);
+  const [ShowPassword, setShowPassword] = useState(true);
 
-  const [name, setName] = React.useState('');
-  const [surename, setSurename] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [userName, setUserName] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [name, setName] = useState('');
+  const [surename, setSurename] = useState('');
+  const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
 
   const RegisterUser = () => {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       console.log(userCredential);
       Alert.alert('Complete');
-      navigation.navigate('Home');
+      navigation.navigate('MainContainer');
     })
     .catch((err) => {
       console.log(err);
